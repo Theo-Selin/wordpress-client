@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const Tags = () => {
   const [tags, setTags] = useState([]);
-
   //Get JSON from wordpress with posts etc.
-  console.log(tags);
   const fetchData = () => {
     fetch("http://localhost:8888/wordpress/wp-json/wp/v2/tags")
       .then((response) => {
@@ -23,9 +21,9 @@ const Tags = () => {
     //Render title and content, dangerouslySetInnerHTML renders all types of content
 
     <div>
-        {tags.map(tag=>{
+        {tags.map((tag, index)=>{
             return(
-                <div>
+                <div key={index}>
                     {tag.name}
                 </div>
             )
