@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {Link} from 'react-router-dom'
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
@@ -6,7 +7,8 @@ const Posts = () => {
   //Get JSON from wordpress with posts etc.
 
   const fetchData = () => {
-    fetch("http://localhost/wp-json/wp/v2/posts")
+    // change the address according to your setting
+    fetch("http://localhost:8888/wordpress/wp-json/wp/v2/posts")
       .then((response) => {
         return response.json();
       })
@@ -28,12 +30,9 @@ const Posts = () => {
       {posts.length > 0 && (
         <>
           {posts.map((post) => (
-            <div className="post" key={post.id}>
-              <h1>{post.title.rendered}</h1>
-              <div
-                dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-              ></div>
-            </div>
+            <ul className="post" key={post.id}>
+              <Link to={`/post/${post.id}`}><li>{post.title.rendered}</li></Link>
+            </ul>
           ))}
         </>
       )}
