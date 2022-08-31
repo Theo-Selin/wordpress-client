@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
 
 const Post = () => {
-  const [post, setPost] = useState([]);
+  const [post, setPost] = useState(null);
   const params = useParams()
 
   useEffect(() => {
@@ -26,7 +26,8 @@ const Post = () => {
     <div>
         {post && (
             <>
-            <h1>{post.date}</h1>
+            <h1>{post.title.rendered}</h1>
+            <div>{post.content.rendered}</div>
             </>
         )}
     </div>
