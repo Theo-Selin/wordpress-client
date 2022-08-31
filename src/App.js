@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import Posts from './Posts';
+import React, { Component } from "react";
+import Posts from "./Posts";
 class App extends Component {
   render() {
     return (
@@ -9,5 +9,5 @@ class App extends Component {
     );
   }
 }
- 
+
 export default App;
