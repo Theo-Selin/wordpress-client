@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Tags from './Tags'
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
@@ -6,7 +7,7 @@ const Posts = () => {
   //Get JSON from wordpress with posts etc.
 
   const fetchData = () => {
-    fetch("http://localhost/wp-json/wp/v2/posts")
+    fetch("http://localhost:8888/wordpress/wp-json/wp/v2/posts")
       .then((response) => {
         return response.json();
       })
@@ -33,6 +34,7 @@ const Posts = () => {
               <div
                 dangerouslySetInnerHTML={{ __html: post.content.rendered }}
               ></div>
+              <Tags/>
             </div>
           ))}
         </>
