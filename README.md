@@ -34,4 +34,4 @@ If you have locally stored Wordpress posts and want to try render them through o
 1. Clone the GitHub repository
 2. Run `npm install` to get the node modules
 3. Run `npm start` to start the React application
-4. Navigate to [http://localhost:3000]
+4. Navigate to [http://localhost:3000](http://localhost:3000)
