@@ -29,7 +29,7 @@ const Posts = () => {
         <>
           {posts.map((post) => (
             <div className="post" key={post.id}>
-              <h1>{post.title.rendered}</h1>
+              <h2>{post.title.rendered}</h2>
               <div
                 dangerouslySetInnerHTML={{ __html: post.content.rendered }}
               ></div>

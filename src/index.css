@@ -4,7 +4,7 @@
 }
 
 body {
-  width: 50%;
+  width: 60%;
   margin: auto;
   background-color: rgb(255, 147, 165);
   color: black;
@@ -21,6 +21,12 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  font-size: 24px;
+  font-weight: lighter;
+  text-align: center;
+}
+
 figure {
   max-width: 100%;
   margin: auto;
@@ -32,8 +38,27 @@ img {
 }
 
 .post {
-  margin-bottom: 100px;
-  border-bottom: 1px solid lightgray;
+  margin-bottom: 50px;
+  border-bottom: 1px solid pink;
+}
+
+.header {
+  display: flex;
+  width: 36%;
+  background-color: white;
+  border-bottom: 1px solid pink;
+  position: fixed;
+  top: 0;
+}
+
+.logo {
+  max-width: 25%;
+  height: auto;
+}
+
+.slogan {
+  padding-left: 50px;
+  padding-top: 50px;
 }
 
 code {
