@@ -19,25 +19,46 @@ const Posts = () => {
     fetchData();
   }, []);
 
-  console.log(posts);
-
   return (
     //Render title and content, dangerouslySetInnerHTML renders all types of content
-
-    <div>
-      {posts.length > 0 && (
-        <>
-          {posts.map((post) => (
-            <div className="post" key={post.id}>
-              <h1>{post.title.rendered}</h1>
-              <div
-                dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-              ></div>
-            </div>
-          ))}
-        </>
-      )}
-    </div>
+    <>
+      <h1>Blog</h1>
+      <div className="container">
+        {posts.length > 0 && (
+          <>
+            {posts.map((post) => (
+              <div className="card" key={post.id}>
+                <div className="card__header">
+                  {/* <img
+                    src={post.guid.rendered}
+                    alt="card__image"
+                    className="card__image"
+                    width="600"
+                  /> */}
+                </div>
+                <div className="card__body">
+                  <span className="tag tag-blue">Category</span>
+                  <h4>{post.title.rendered}</h4>
+                  <div
+                    dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+                    width="600"
+                  ></div>
+                  {/* <p>{post.excerpt.rendered}</p> */}
+                </div>
+                <div className="card__footer">
+                  <div className="user">
+                    <div className="user__info">
+                      <h5>Name</h5>
+                      <small>{post.date}</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </>
+        )}
+      </div>
+    </>
   );
 };
 
