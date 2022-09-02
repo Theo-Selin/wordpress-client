@@ -19,10 +19,8 @@ const Posts = () => {
     fetchData();
   }, []);
 
-  console.log(posts);
-
   return (
-    //Render title and content, dangerouslySetInnerHTML renders all types of content
+    //Render title and content, dangerouslySetInnerHTML to remove tags
 
     <div>
       {posts.length > 0 && (
